@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="http://localhost:8080/api/items">Shop</a>
+    <a class="navbar-brand" href="http://localhost:8080/api/cart">Cart</a>
+    <a class="navbar-brand" href="http://localhost:8080/api/order">My orders</a>
+
+</nav>
+
+<main role="main" class="container">
+
+    <div class="starter-template">
+        <h1>Cart</h1>
+    </div>
+    <div>
+        <p>Total price: </p>
+        <span th:text="${price}"></span>
+    </div>
+    <div>
+        <form class="form-inline" method="post" th:action="@{/api/order}">
+            <div class="form-group mx-sm-3 mb-">
+                <label for="phoneNumber">Phone number: </label>
+                <input class="form-control" required="required" name="phoneNumber" id="phoneNumber">
+            </div>
+            <button id="create_order" class="btn btn-success">Create Order</button>
+        </form>
+    </div>
+    <div class="section align-items-center">
+        <div  th:each="item : ${cart}" class="section_item">
+            <img th:src="@{/img/cat.png}" class="section_item_img">
+            <p>Title: <span th:text="${item.title}"></span></p>
+            <p>Price: <span th:text="${item.price}"></span></p>
+            <p>Description: <span th:text="${item.description}"></span></p>
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+body {
+    padding-top: 5rem;
+}
+
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+h1 {
+    color: #0000FF;
+}
+
+h2 {
+    color: #FF0000;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aquamarine;
+    padding: 50px;
+}
+
+.section_item {
+    width: 300px;
+    background-color: antiquewhite;
+    margin: 15px;
+    padding: 10px;
+}
+
+.section_item_img {
+    width: 280px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.item.button {
+    margin: 15px;
+}
+
+#create_order{
+    margin: 15px;
+}
